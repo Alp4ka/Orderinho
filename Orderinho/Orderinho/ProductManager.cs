@@ -12,5 +12,9 @@ namespace Orderinho
         {
             return ProductsDataBase.Read();
         }
+        public static Product GetProductByID(int id)
+        {
+            return GetAllProducts().Where(x => x.ID == id).First();
+        }
     }
 }

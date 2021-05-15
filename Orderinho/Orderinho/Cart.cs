@@ -58,7 +58,7 @@ namespace Orderinho
         }
         public Order CreateOrder()
         {
-            return new Order(Customer, Products, OrderManager.GetAllOrders().Count + 1);
+            return new Order(OrderManager.GetAllOrders().Count + 1, Customer, Products);
         }
     }
 }

@@ -29,3 +29,36 @@ C:\Users\kisam\source\repos\Orderinho\Orderinho\obj\Debug\Orderinho.exe
 C:\Users\kisam\source\repos\Orderinho\Orderinho\obj\Debug\Orderinho.pdb
 C:\Users\kisam\source\repos\Orderinho\Orderinho\obj\Debug\Orderinho.SignUpForm.resources
 C:\Users\kisam\source\repos\Orderinho\Orderinho\obj\Debug\Orderinho.ProductCard.resources
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.csprojAssemblyReference.cache
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.SignInForm.resources
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.SignUpForm.resources
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.UserForm.resources
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.Properties.Resources.resources
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.ProductCard.resources
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.csproj.GenerateResource.cache
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.csproj.CoreCompileInputs.cache
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.exe
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.pdb
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\Orderinho.exe.config
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\Orderinho.exe
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\Orderinho.pdb
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\EntityFramework.dll
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Buffers.dll
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Data.SQLite.dll
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Memory.dll
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\EntityFramework.xml
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Buffers.xml
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Data.SQLite.xml
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Memory.xml
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.csproj.CopyComplete
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.CartView.resources
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.AdminForm.resources

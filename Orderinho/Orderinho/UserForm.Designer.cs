@@ -42,7 +42,7 @@
             this.productsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.productsPanel.AutoScroll = true;
-            this.productsPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.productsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.productsPanel.Location = new System.Drawing.Point(12, 62);
             this.productsPanel.Name = "productsPanel";
             this.productsPanel.Size = new System.Drawing.Size(540, 376);
@@ -87,6 +87,7 @@
             this.cartButton.TabIndex = 14;
             this.cartButton.Text = "Cart";
             this.cartButton.UseVisualStyleBackColor = false;
+            this.cartButton.Click += new System.EventHandler(this.cartButton_Click);
             // 
             // label1
             // 
@@ -104,7 +105,7 @@
             this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox1.Location = new System.Drawing.Point(566, 62);
@@ -139,7 +140,7 @@
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.productsPanel);
             this.Name = "UserForm";
-            this.Text = "Form1";
+            this.Text = "Shop";
             this.ResumeLayout(false);
             this.PerformLayout();
 

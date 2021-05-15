@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace Orderinho
 {
@@ -33,18 +34,21 @@ namespace Orderinho
         {
             var result = new Dictionary<int, int>();
             var products = ProductManager.GetAllProducts();
+            line = line.Trim();
             var splitted = line.Split(' ');
-            foreach(var elem in splitted)
-            {
-                int id = int.Parse(elem);
-                Product product = products.Where(x => x.ID == id).First();
-                if(result.ContainsKey(product.ID))
+            if (!String.IsNullOrWhiteSpace(splitted[0])) {
+                foreach (var elem in splitted)
                 {
-                    result[product.ID]++;
-                }
-                else
-                {
-                    result.Add(product.ID, 1);
+                    int id = int.Parse(elem);
+                    Product product = products.Where(x => x.ID == id).First();
+                    if (result.ContainsKey(product.ID))
+                    {
+                        result[product.ID]++;
+                    }
+                    else
+                    {
+                        result.Add(product.ID, 1);
+                    }
                 }
             }
             return result;

@@ -123,7 +123,7 @@
             this.Controls.Add(this.emailTb);
             this.Controls.Add(this.emailLabel);
             this.Name = "SignInForm";
-            this.Text = "SignInForm";
+            this.Text = "Sign In";
             this.ResumeLayout(false);
             this.PerformLayout();
 

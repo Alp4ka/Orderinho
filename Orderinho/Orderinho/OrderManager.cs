@@ -26,7 +26,16 @@ namespace Orderinho
         public static List<Order> GetActive()
         {
             var temp = GetAllOrders();
-            return temp.Where(x=>x.State != OrderState.Done).ToList();
+            return temp.Where(x => x.State != OrderState.Done).ToList();
+        }
+        /// <summary>
+        /// Add order to database.
+        /// </summary>
+        /// <param name="order"></param>
+        public static void Confirm(Order order, string address)
+        {
+            order.Addresss = address;
+            OrdersDataBase.Add(order);
         }
     }
 }

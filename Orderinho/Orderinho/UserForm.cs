@@ -59,5 +59,15 @@ namespace Orderinho
             UserManager.LogOut();
             Close();
         }
+
+        private void cartButton_Click(object sender, EventArgs e)
+        {
+            CartView cView = new CartView(CurrentCart);
+            cView.ShowDialog();
+            if (cView.OnClose)
+            {
+                Close();
+            }
+        }
     }
 }

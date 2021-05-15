@@ -40,8 +40,8 @@
             this.surnameTb = new System.Windows.Forms.TextBox();
             this.midnameTb = new System.Windows.Forms.TextBox();
             this.telephoneLabel = new System.Windows.Forms.Label();
-            this.telephoneTb = new System.Windows.Forms.TextBox();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.telephoneTb = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // signupButton
@@ -154,13 +154,6 @@
             this.telephoneLabel.TabIndex = 19;
             this.telephoneLabel.Text = "Telephone";
             // 
-            // telephoneTb
-            // 
-            this.telephoneTb.Location = new System.Drawing.Point(104, 146);
-            this.telephoneTb.Name = "telephoneTb";
-            this.telephoneTb.Size = new System.Drawing.Size(216, 20);
-            this.telephoneTb.TabIndex = 20;
-            // 
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
@@ -171,13 +164,21 @@
             this.errorLabel.Size = new System.Drawing.Size(0, 22);
             this.errorLabel.TabIndex = 21;
             // 
+            // telephoneTb
+            // 
+            this.telephoneTb.Location = new System.Drawing.Point(104, 146);
+            this.telephoneTb.Mask = "8 (999) 000-0000";
+            this.telephoneTb.Name = "telephoneTb";
+            this.telephoneTb.Size = new System.Drawing.Size(213, 20);
+            this.telephoneTb.TabIndex = 22;
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(329, 299);
-            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.telephoneTb);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.telephoneLabel);
             this.Controls.Add(this.midnameTb);
             this.Controls.Add(this.surnameTb);
@@ -191,7 +192,7 @@
             this.Controls.Add(this.emailTb);
             this.Controls.Add(this.emailLabel);
             this.Name = "SignUpForm";
-            this.Text = "SignUpForm";
+            this.Text = "Sign Up";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,7 +211,7 @@
         private System.Windows.Forms.TextBox surnameTb;
         private System.Windows.Forms.TextBox midnameTb;
         private System.Windows.Forms.Label telephoneLabel;
-        private System.Windows.Forms.TextBox telephoneTb;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.MaskedTextBox telephoneTb;
     }
 }

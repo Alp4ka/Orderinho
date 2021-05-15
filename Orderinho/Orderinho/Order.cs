@@ -10,6 +10,7 @@ namespace Orderinho
     {
         public int ID { get; private set; }
         public User Customer { get; set; }
+        public string Addresss { get; set; }
         private OrderState _state;
         private PaymentState _payState;
         public OrderState State
@@ -34,9 +35,7 @@ namespace Orderinho
             get => _payState;
             set 
             {
-                if(_payState == PaymentState.NonPaid &&
-                    value == PaymentState.Paid && 
-                    State == OrderState.Processed)
+                if(_payState == PaymentState.NonPaid && State == OrderState.Processed)
                 {
                     _payState = value;
                 }
@@ -60,12 +59,13 @@ namespace Orderinho
                 return result;
             }
         }
-        public Order(User customer, Dictionary<int, int> products, int id)
+        public Order(int id, User customer, Dictionary<int, int> products, string address="-", PaymentState payment= PaymentState.NonPaid, OrderState state= OrderState.Processed)
         {
+            Addresss = address;
             ID = id;
             Customer = customer;
-            PayState = PaymentState.NonPaid;
-            State = OrderState.Processed;
+            _payState = payment;
+            _state = state;
             Products = new Dictionary<int, int>(products);
         }
     }
