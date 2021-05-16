@@ -67,13 +67,15 @@
             // userInfo
             // 
             this.userInfo.AutoSize = true;
-            this.userInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.userInfo.ForeColor = System.Drawing.Color.DodgerBlue;
             this.userInfo.Location = new System.Drawing.Point(13, 13);
             this.userInfo.Name = "userInfo";
             this.userInfo.Size = new System.Drawing.Size(70, 20);
             this.userInfo.TabIndex = 13;
             this.userInfo.Text = "UserFIO";
+            this.userInfo.Click += new System.EventHandler(this.userInfo_Click);
             // 
             // cartButton
             // 

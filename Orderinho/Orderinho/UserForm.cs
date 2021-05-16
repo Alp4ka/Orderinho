@@ -75,5 +75,13 @@ namespace Orderinho
                 Close();
             }
         }
+
+        private void userInfo_Click(object sender, EventArgs e)
+        {
+            var uAView = new UserAccountView(UserManager.CurrentUser);
+            Hide();
+            uAView.ShowDialog();
+            Show();
+        }
     }
 }

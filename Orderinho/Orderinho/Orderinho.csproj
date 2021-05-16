@@ -109,6 +109,12 @@
     <Compile Include="SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserAccountView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAccountView.Designer.cs">
+      <DependentUpon>UserAccountView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersDataBase.cs" />
     <Compile Include="SignInForm.cs">
       <SubType>Form</SubType>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserAccountView.resx">
+      <DependentUpon>UserAccountView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
