@@ -59,6 +59,7 @@ namespace Orderinho
                 var order = CurrentCart.CreateOrder();
                 OrderManager.Confirm(order, addressTb.Text);
                 OnClose = true;
+                MessageBox.Show("You have successfully made an order!");
                 Close();
             }
         }

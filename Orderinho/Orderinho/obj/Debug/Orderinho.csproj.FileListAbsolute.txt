@@ -62,3 +62,5 @@ C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\bi
 C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.csproj.CopyComplete
 C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.CartView.resources
 C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.AdminForm.resources
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.orderView.resources
+C:\Users\kisam\OneDrive\Рабочий стол\Orderinho\Orderinho\Orderinho\obj\Debug\Orderinho.UserView.resources

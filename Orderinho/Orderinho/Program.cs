@@ -14,6 +14,7 @@ namespace Orderinho
         [STAThread]
         static void Main()
         {
+            MessageBox.Show("Open README before start.");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 

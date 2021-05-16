@@ -30,12 +30,12 @@ namespace Orderinho
                 {
                     connection.Open();
                     SQLiteCommand command =
-                    new SQLiteCommand("CREATE TABLE Orders (id INTEGER , Customer INTEGER, Products TEXT, Address TEXT, Payment INTEGER, State INTEGER);" +
+                    new SQLiteCommand("CREATE TABLE Orders (id INTEGER , Customer INTEGER, Products TEXT, Address TEXT, Payment INTEGER, State INTEGER,  Price REAL);" +
                     "CREATE TABLE Carts (Customer INTEGER, Products TEXT);", connection);
                     command.ExecuteNonQuery();
                 }
             }
-            
+
         }
         public static string Path { get => _dbPath; }
         public static Cart GetCart(User user)
@@ -72,8 +72,23 @@ namespace Orderinho
                     command.ExecuteNonQuery();
                 }
             }
-            
         }
+
+        public static void UpdateOrder(Order order)
+        {
+            if (File.Exists(_dbPath))
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", _dbPath)))
+                {
+                    connection.Open();
+                    string line = $"UPDATE 'Orders' SET Payment = '{(int)order.PayState}', State = '{(int)order.State}' WHERE id = '{order.ID}'; ";
+                    SQLiteCommand command = new SQLiteCommand(line, connection);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
         /// <summary>
         /// Read database.
         /// </summary>
@@ -95,8 +110,8 @@ namespace Orderinho
                             User customer = UserManager.GetAllUsers().Where(x => x.ID == customerId).First();
                             var products = Utils.ParseProducts(record["Products"].ToString());
                             var address = record["Address"].ToString();
-                            var payment =(PaymentState) int.Parse(record["Payment"].ToString());
-                            var state =(OrderState) int.Parse(record["State"].ToString()) ;
+                            var payment = (PaymentState)int.Parse(record["Payment"].ToString());
+                            var state = (OrderState)int.Parse(record["State"].ToString());
                             Order order = new Order(id, customer, products, address, payment, state);
                             result.Add(order);
                         }
@@ -118,7 +133,7 @@ namespace Orderinho
                 {
                     connection.Open();
                     string line = $"DELETE FROM 'Carts' WHERE Customer = {order.Customer.ID};" +
-                        $"INSERT INTO 'Orders' ('id', 'Customer' , 'Products', 'Address', 'Payment', 'State') VALUES ('{order.ID}', '{order.Customer.ID}', '{Utils.ProductsInline(order.Products)}', '{order.Addresss}', '{(int)order.PayState}', '{(int)order.State}');";
+                        $"INSERT INTO 'Orders' ('id', 'Customer' , 'Products', 'Address', 'Payment', 'State', 'Price') VALUES ('{order.ID}', '{order.Customer.ID}', '{Utils.ProductsInline(order.Products)}', '{order.Addresss}', '{(int)order.PayState}', '{(int)order.State}', '{order.Price}');";
                     SQLiteCommand command = new SQLiteCommand(line, connection);
                     command.ExecuteNonQuery();
                 }

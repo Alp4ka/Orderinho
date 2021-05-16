@@ -49,6 +49,10 @@ namespace Orderinho
                 orders.Where(x => x.PayState == payment && x.State == state).ToList() :
                 orders.Where(x => x.PayState == payment && x.State == state && x.Customer.ID == user.ID).ToList();
         }
+        public static Order GetOrderByID(int id)
+        {
+            return GetAllOrders().Where(x => x.ID == id).First();
+        }
         /// <summary>
         /// Add order to database.
         /// </summary>
@@ -57,6 +61,14 @@ namespace Orderinho
         {
             order.Addresss = address;
             OrdersDataBase.Add(order);
+        }
+        public static List<Order> GetOrdersByCustomer(User user)
+        {
+            return GetAllOrders().Where(x => x.Customer.ID == user.ID).ToList();
+        }
+        public static void UpdateOrder(Order order)
+        {
+            OrdersDataBase.UpdateOrder(order);
         }
     }
 }

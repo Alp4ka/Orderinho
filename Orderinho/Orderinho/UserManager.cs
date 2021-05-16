@@ -42,6 +42,10 @@ namespace Orderinho
         {
             CurrentUser = null;
         }
+        public static User GetUserByID(int id)
+        {
+            return GetAllUsers().Where(x => x.ID == id).First();
+        }
         public static void Register(int id, string email, string password, string name, string surname, string midname, string telephone)
         {
             User user = new User(id, email, password, name, surname, midname, telephone);

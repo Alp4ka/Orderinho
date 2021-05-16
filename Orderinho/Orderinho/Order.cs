@@ -35,7 +35,7 @@ namespace Orderinho
             get => _payState;
             set 
             {
-                if(_payState == PaymentState.NonPaid && State == OrderState.Processed)
+                if(State == OrderState.Processed)
                 {
                     _payState = value;
                 }

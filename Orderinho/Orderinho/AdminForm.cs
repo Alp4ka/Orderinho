@@ -45,7 +45,8 @@ namespace Orderinho
                 var address = order.Addresss;
                 var payment = order.PayState;
                 var state = order.State;
-                allOrdersGridView.Rows.Add(id, customer, products, address, payment, state);
+                var price = order.Price;
+                allOrdersGridView.Rows.Add(id, customer, products, address, payment, state, price);
             }
         }
         private void InitializeActiveOrdersView()
@@ -60,7 +61,8 @@ namespace Orderinho
                 var address = order.Addresss;
                 var payment = order.PayState;
                 var state = order.State;
-                activeOrdersGridView.Rows.Add(id, customer, products, address, payment, state);
+                var price = order.Price;
+                activeOrdersGridView.Rows.Add(id, customer, products, address, payment, state, price);
             }
         }
 
@@ -78,6 +80,39 @@ namespace Orderinho
                     InitializeUsersView();
                     return;
             }
+        }
+
+        private void ordersEditButton_Click(object sender, EventArgs e)
+        {
+            int id = (int)allOrdersGridView.SelectedCells[0].OwningRow.Cells[0].Value;
+            var order = OrderManager.GetOrderByID(id);
+            var oView = new OrderView(order);
+            oView.ShowDialog();
+            InitializeAllOrdersView();
+        }
+
+        private void activeEditButton_Click(object sender, EventArgs e)
+        {
+            int id = (int)activeOrdersGridView.SelectedCells[0].OwningRow.Cells[0].Value;
+            var order = OrderManager.GetOrderByID(id);
+            var oView = new OrderView(order);
+            oView.ShowDialog();
+            InitializeActiveOrdersView();
+        }
+
+        private void usersEditButton_Click(object sender, EventArgs e)
+        {
+            int id = (int)usersGridView.SelectedCells[0].OwningRow.Cells[0].Value;
+            var user = UserManager.GetUserByID(id);
+            var uView= new UserView(user);
+            uView.ShowDialog();
+            InitializeUsersView();
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            UserManager.LogOut();
+            Close();
         }
     }
 }

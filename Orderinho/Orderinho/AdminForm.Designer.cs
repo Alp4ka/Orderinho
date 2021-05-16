@@ -35,24 +35,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.allOrdersGridView = new System.Windows.Forms.DataGridView();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.allOrdersTab = new System.Windows.Forms.TabPage();
             this.ordersEditButton = new System.Windows.Forms.Button();
             this.activeOrdersTab = new System.Windows.Forms.TabPage();
             this.activeEditButton = new System.Windows.Forms.Button();
             this.activeOrdersGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersTab = new System.Windows.Forms.TabPage();
             this.usersEditButton = new System.Windows.Forms.Button();
             this.usersGridView = new System.Windows.Forms.DataGridView();
@@ -63,6 +51,21 @@
             this.midnameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telephoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAdminColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logoutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.allOrdersGridView)).BeginInit();
             this.tabControl.SuspendLayout();
             this.allOrdersTab.SuspendLayout();
@@ -97,7 +100,8 @@
             this.productsColumn,
             this.addressColumn,
             this.paymentColumn,
-            this.stateColumn});
+            this.stateColumn,
+            this.priceColumn});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -111,44 +115,8 @@
             this.allOrdersGridView.MultiSelect = false;
             this.allOrdersGridView.Name = "allOrdersGridView";
             this.allOrdersGridView.RowHeadersVisible = false;
-            this.allOrdersGridView.Size = new System.Drawing.Size(762, 400);
+            this.allOrdersGridView.Size = new System.Drawing.Size(762, 375);
             this.allOrdersGridView.TabIndex = 0;
-            // 
-            // idColumn
-            // 
-            this.idColumn.HeaderText = "ID";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            // 
-            // customerColumn
-            // 
-            this.customerColumn.HeaderText = "Customer";
-            this.customerColumn.Name = "customerColumn";
-            this.customerColumn.ReadOnly = true;
-            // 
-            // productsColumn
-            // 
-            this.productsColumn.HeaderText = "Products";
-            this.productsColumn.Name = "productsColumn";
-            this.productsColumn.ReadOnly = true;
-            // 
-            // addressColumn
-            // 
-            this.addressColumn.HeaderText = "Address";
-            this.addressColumn.Name = "addressColumn";
-            this.addressColumn.ReadOnly = true;
-            // 
-            // paymentColumn
-            // 
-            this.paymentColumn.HeaderText = "Payment";
-            this.paymentColumn.Name = "paymentColumn";
-            this.paymentColumn.ReadOnly = true;
-            // 
-            // stateColumn
-            // 
-            this.stateColumn.HeaderText = "State";
-            this.stateColumn.Name = "stateColumn";
-            this.stateColumn.ReadOnly = true;
             // 
             // tabControl
             // 
@@ -158,10 +126,10 @@
             this.tabControl.Controls.Add(this.allOrdersTab);
             this.tabControl.Controls.Add(this.activeOrdersTab);
             this.tabControl.Controls.Add(this.usersTab);
-            this.tabControl.Location = new System.Drawing.Point(12, 12);
+            this.tabControl.Location = new System.Drawing.Point(12, 40);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(782, 438);
+            this.tabControl.Size = new System.Drawing.Size(782, 410);
             this.tabControl.TabIndex = 1;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
@@ -172,7 +140,7 @@
             this.allOrdersTab.Location = new System.Drawing.Point(4, 22);
             this.allOrdersTab.Name = "allOrdersTab";
             this.allOrdersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.allOrdersTab.Size = new System.Drawing.Size(774, 412);
+            this.allOrdersTab.Size = new System.Drawing.Size(774, 384);
             this.allOrdersTab.TabIndex = 0;
             this.allOrdersTab.Text = "Orders";
             this.allOrdersTab.UseVisualStyleBackColor = true;
@@ -184,12 +152,13 @@
             this.ordersEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ordersEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ordersEditButton.ForeColor = System.Drawing.Color.White;
-            this.ordersEditButton.Location = new System.Drawing.Point(668, 361);
+            this.ordersEditButton.Location = new System.Drawing.Point(668, 333);
             this.ordersEditButton.Name = "ordersEditButton";
             this.ordersEditButton.Size = new System.Drawing.Size(86, 33);
             this.ordersEditButton.TabIndex = 4;
             this.ordersEditButton.Text = "Edit";
             this.ordersEditButton.UseVisualStyleBackColor = false;
+            this.ordersEditButton.Click += new System.EventHandler(this.ordersEditButton_Click);
             // 
             // activeOrdersTab
             // 
@@ -197,7 +166,7 @@
             this.activeOrdersTab.Controls.Add(this.activeOrdersGridView);
             this.activeOrdersTab.Location = new System.Drawing.Point(4, 22);
             this.activeOrdersTab.Name = "activeOrdersTab";
-            this.activeOrdersTab.Size = new System.Drawing.Size(774, 412);
+            this.activeOrdersTab.Size = new System.Drawing.Size(774, 384);
             this.activeOrdersTab.TabIndex = 2;
             this.activeOrdersTab.Text = "Active";
             this.activeOrdersTab.UseVisualStyleBackColor = true;
@@ -209,12 +178,13 @@
             this.activeEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.activeEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.activeEditButton.ForeColor = System.Drawing.Color.White;
-            this.activeEditButton.Location = new System.Drawing.Point(668, 361);
+            this.activeEditButton.Location = new System.Drawing.Point(668, 333);
             this.activeEditButton.Name = "activeEditButton";
             this.activeEditButton.Size = new System.Drawing.Size(86, 33);
             this.activeEditButton.TabIndex = 3;
             this.activeEditButton.Text = "Edit";
             this.activeEditButton.UseVisualStyleBackColor = false;
+            this.activeEditButton.Click += new System.EventHandler(this.activeEditButton_Click);
             // 
             // activeOrdersGridView
             // 
@@ -241,7 +211,8 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn8});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -255,44 +226,8 @@
             this.activeOrdersGridView.MultiSelect = false;
             this.activeOrdersGridView.Name = "activeOrdersGridView";
             this.activeOrdersGridView.RowHeadersVisible = false;
-            this.activeOrdersGridView.Size = new System.Drawing.Size(762, 400);
+            this.activeOrdersGridView.Size = new System.Drawing.Size(762, 375);
             this.activeOrdersGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Customer";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Products";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Address";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Payment";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "State";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // usersTab
             // 
@@ -301,7 +236,7 @@
             this.usersTab.Location = new System.Drawing.Point(4, 22);
             this.usersTab.Name = "usersTab";
             this.usersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.usersTab.Size = new System.Drawing.Size(774, 412);
+            this.usersTab.Size = new System.Drawing.Size(774, 384);
             this.usersTab.TabIndex = 1;
             this.usersTab.Text = "Users";
             this.usersTab.UseVisualStyleBackColor = true;
@@ -313,12 +248,13 @@
             this.usersEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usersEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.usersEditButton.ForeColor = System.Drawing.Color.White;
-            this.usersEditButton.Location = new System.Drawing.Point(668, 361);
+            this.usersEditButton.Location = new System.Drawing.Point(668, 333);
             this.usersEditButton.Name = "usersEditButton";
             this.usersEditButton.Size = new System.Drawing.Size(86, 33);
             this.usersEditButton.TabIndex = 2;
             this.usersEditButton.Text = "Edit";
             this.usersEditButton.UseVisualStyleBackColor = false;
+            this.usersEditButton.Click += new System.EventHandler(this.usersEditButton_Click);
             // 
             // usersGridView
             // 
@@ -360,7 +296,7 @@
             this.usersGridView.MultiSelect = false;
             this.usersGridView.Name = "usersGridView";
             this.usersGridView.RowHeadersVisible = false;
-            this.usersGridView.Size = new System.Drawing.Size(762, 400);
+            this.usersGridView.Size = new System.Drawing.Size(762, 372);
             this.usersGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn7
@@ -405,11 +341,109 @@
             this.isAdminColumn.Name = "isAdminColumn";
             this.isAdminColumn.ReadOnly = true;
             // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "ID";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            // 
+            // customerColumn
+            // 
+            this.customerColumn.HeaderText = "Customer";
+            this.customerColumn.Name = "customerColumn";
+            this.customerColumn.ReadOnly = true;
+            // 
+            // productsColumn
+            // 
+            this.productsColumn.HeaderText = "Products";
+            this.productsColumn.Name = "productsColumn";
+            this.productsColumn.ReadOnly = true;
+            // 
+            // addressColumn
+            // 
+            this.addressColumn.HeaderText = "Address";
+            this.addressColumn.Name = "addressColumn";
+            this.addressColumn.ReadOnly = true;
+            // 
+            // paymentColumn
+            // 
+            this.paymentColumn.HeaderText = "Payment";
+            this.paymentColumn.Name = "paymentColumn";
+            this.paymentColumn.ReadOnly = true;
+            // 
+            // stateColumn
+            // 
+            this.stateColumn.HeaderText = "State";
+            this.stateColumn.Name = "stateColumn";
+            this.stateColumn.ReadOnly = true;
+            // 
+            // priceColumn
+            // 
+            this.priceColumn.HeaderText = "Price";
+            this.priceColumn.Name = "priceColumn";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Customer";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Products";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Payment";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "State";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logoutButton.BackColor = System.Drawing.Color.Red;
+            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.logoutButton.ForeColor = System.Drawing.Color.White;
+            this.logoutButton.Location = new System.Drawing.Point(686, 12);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(108, 34);
+            this.logoutButton.TabIndex = 13;
+            this.logoutButton.Text = "Log Out";
+            this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 462);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.tabControl);
             this.Name = "AdminForm";
             this.Text = "Admin Interface";
@@ -436,18 +470,6 @@
         private System.Windows.Forms.Button ordersEditButton;
         private System.Windows.Forms.Button activeEditButton;
         private System.Windows.Forms.Button usersEditButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productsColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paymentColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
@@ -455,5 +477,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn midnameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telephoneColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn isAdminColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productsColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Button logoutButton;
     }
 }
