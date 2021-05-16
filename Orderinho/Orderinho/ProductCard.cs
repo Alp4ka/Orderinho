@@ -11,7 +11,7 @@ namespace Orderinho
         {
             InitializeComponent();
         }
-        public ProductCard(Product product, int counter = 0):this()
+        public ProductCard(Product product, int counter = 0) : this()
         {
             ProductHolder = product;
             nameLabel.Text = product.Name;
@@ -48,7 +48,7 @@ namespace Orderinho
         /// <param name="e"></param>
         private void removeButton_Click(object sender, EventArgs e)
         {
-            if(Counter > 0)
+            if (Counter > 0)
             {
                 --Counter;
             }
