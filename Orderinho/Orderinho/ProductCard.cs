@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Orderinho
@@ -35,7 +29,11 @@ namespace Orderinho
             countLabel.Text = Counter.ToString();
         }
         public Product ProductHolder { get; private set; }
-
+        /// <summary>
+        /// Add button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addButton_Click(object sender, EventArgs e)
         {
             ++Counter;
@@ -43,7 +41,11 @@ namespace Orderinho
             UserForm.CurrentCart.Add(ProductHolder);
             OrderManager.SaveCart(UserForm.CurrentCart);
         }
-
+        /// <summary>
+        /// Remvoe button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void removeButton_Click(object sender, EventArgs e)
         {
             if(Counter > 0)

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Orderinho
@@ -21,22 +15,26 @@ namespace Orderinho
             //MessageBox.Show($"{Utils.ProductsInline(CurrentCart.Products)}");
             InitializeProductCards();
         }
+        /// <summary>
+        /// Initialize cart.
+        /// </summary>
         public void InitializeCart()
         {
             CurrentCart = OrderManager.GetCart();
-            if(CurrentCart == null)
+            if (CurrentCart == null)
             {
                 CurrentCart = new Cart(UserManager.CurrentUser);
                 OrderManager.SaveCart(CurrentCart);
             }
         }
-
-
+        /// <summary>
+        /// Initialize cards with products in panel.
+        /// </summary>
         public void InitializeProductCards()
         {
             var products = ProductManager.GetAllProducts();
             int cnt = 0;
-            foreach(Product product in products)
+            foreach (Product product in products)
             {
                 ProductCard card;
                 if (CurrentCart.Products.ContainsKey(product.ID))
@@ -47,19 +45,27 @@ namespace Orderinho
                 {
                     card = new ProductCard(product);
                 }
-               
+
                 productsPanel.Controls.Add(card);
-                card.Location = new Point(0, (card.Height + 10)*cnt);
+                card.Location = new Point(0, (card.Height + 10) * cnt);
                 ++cnt;
             }
         }
-
+        /// <summary>
+        /// Logout button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void logoutButton_Click(object sender, EventArgs e)
         {
             UserManager.LogOut();
             Close();
         }
-
+        /// <summary>
+        /// Cart button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cartButton_Click(object sender, EventArgs e)
         {
             CartView cView = new CartView(CurrentCart);

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Orderinho
 {
@@ -21,9 +19,9 @@ namespace Orderinho
             }
             set
             {
-                if(value != OrderState.Processed && PayState == PaymentState.NonPaid)
+                if (value != OrderState.Processed && PayState == PaymentState.NonPaid)
                 {
-                    throw new ArgumentException("Order is unpaid. You can't change its status!"); 
+                    throw new ArgumentException("Order is unpaid. You can't change its status!");
                 }
                 else
                 {
@@ -31,11 +29,12 @@ namespace Orderinho
                 }
             }
         }
-        public PaymentState PayState { 
+        public PaymentState PayState
+        {
             get => _payState;
-            set 
+            set
             {
-                if(State == OrderState.Processed)
+                if (State == OrderState.Processed)
                 {
                     _payState = value;
                 }
@@ -47,19 +46,20 @@ namespace Orderinho
         }
         // product_id, count
         public Dictionary<int, int> Products { get; set; }
-        public double Price {
+        public double Price
+        {
             get
             {
                 double result = 0;
                 var products = ProductManager.GetAllProducts();
-                foreach(int id in Products.Keys)
+                foreach (int id in Products.Keys)
                 {
                     result += products.Where(x => x.ID == id).First().Price * Products[id];
                 }
                 return result;
             }
         }
-        public Order(int id, User customer, Dictionary<int, int> products, string address="-", PaymentState payment= PaymentState.NonPaid, OrderState state= OrderState.Processed)
+        public Order(int id, User customer, Dictionary<int, int> products, string address = "-", PaymentState payment = PaymentState.NonPaid, OrderState state = OrderState.Processed)
         {
             Addresss = address;
             ID = id;
@@ -69,7 +69,7 @@ namespace Orderinho
             Products = new Dictionary<int, int>(products);
         }
     }
-    
+
     public enum PaymentState
     {
         NonPaid = 0,

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Orderinho
 {
@@ -14,14 +10,25 @@ namespace Orderinho
         {
             CurrentUser = null;
         }
+        /// <summary>
+        /// Get all users from database.
+        /// </summary>
+        /// <returns></returns>
         public static List<User> GetAllUsers()
         {
             return UsersDataBase.Read();
         }
+        /// <summary>
+        /// Login user with input parameters.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="errorMessage"></param>
+        /// <returns></returns>
         public static bool LogIn(string email, string password, out string errorMessage)
         {
             var users = GetAllUsers().Where(x => x.Email == email).ToList();
-            if(users.Count > 0)
+            if (users.Count > 0)
             {
                 if (users[0].CheckPassword(password))
                 {
@@ -38,14 +45,32 @@ namespace Orderinho
                 return false;
             }
         }
+        /// <summary>
+        /// Logout from current account.
+        /// </summary>
         public static void LogOut()
         {
             CurrentUser = null;
         }
+        /// <summary>
+        /// Get user by his id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static User GetUserByID(int id)
         {
             return GetAllUsers().Where(x => x.ID == id).First();
         }
+        /// <summary>
+        /// Sign Up a new user with input parameters.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="name"></param>
+        /// <param name="surname"></param>
+        /// <param name="midname"></param>
+        /// <param name="telephone"></param>
         public static void Register(int id, string email, string password, string name, string surname, string midname, string telephone)
         {
             User user = new User(id, email, password, name, surname, midname, telephone);

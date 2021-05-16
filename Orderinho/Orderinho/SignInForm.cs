@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Orderinho
@@ -17,18 +10,26 @@ namespace Orderinho
             InitializeComponent();
         }
         public bool Result = false;
-
+        /// <summary>
+        /// LogIn button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void loginButton_Click(object sender, EventArgs e)
         {
             string message;
-            if(UserManager.LogIn(emailTb.Text.Trim(), passwordTb.Text, out message))
+            if (UserManager.LogIn(emailTb.Text.Trim(), passwordTb.Text, out message))
             {
                 Result = true;
                 Close();
             }
             errorLabel.Text = message;
         }
-
+        /// <summary>
+        /// SignUp button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void registerButton_Click(object sender, EventArgs e)
         {
             SignUpForm signUpForm = new SignUpForm();

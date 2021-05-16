@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Orderinho
@@ -21,12 +15,15 @@ namespace Orderinho
             Products = new List<Product>();
             InitializeComponent();
         }
-        public CartView(Cart cart):this()
+        public CartView(Cart cart) : this()
         {
             CurrentCart = cart;
             InitializeContaining();
         }
-       private  void InitializeContaining()
+        /// <summary>
+        /// Initialize containing method.
+        /// </summary>
+        private void InitializeContaining()
         {
             var products = CurrentCart.Products;
             double sum = 0;
@@ -40,13 +37,18 @@ namespace Orderinho
             }
             priceLabel.Text = $"{sum} RUB";
         }
+        /// <summary>
+        /// Confirm button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void confirmButton_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(addressTb.Text))
             {
                 MessageBox.Show("Fill adrress field!");
             }
-            else if(addressTb.Text.Length > 128)
+            else if (addressTb.Text.Length > 128)
             {
                 MessageBox.Show("I am not sure your address may content more than 128 symbols.");
             }

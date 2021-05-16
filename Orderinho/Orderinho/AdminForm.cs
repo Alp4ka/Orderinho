@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Orderinho
@@ -17,6 +10,9 @@ namespace Orderinho
             InitializeComponent();
             InitializeAllOrdersView();
         }
+        /// <summary>
+        /// Initialize users view.
+        /// </summary>
         private void InitializeUsersView()
         {
             var users = UserManager.GetAllUsers();
@@ -33,6 +29,9 @@ namespace Orderinho
                 usersGridView.Rows.Add(id, email, name, surname, midname, telephone, isAdmin);
             }
         }
+        /// <summary>
+        /// Initialize view of all orders.
+        /// </summary>
         private void InitializeAllOrdersView()
         {
             var orders = OrderManager.GetAllOrders();
@@ -49,6 +48,9 @@ namespace Orderinho
                 allOrdersGridView.Rows.Add(id, customer, products, address, payment, state, price);
             }
         }
+        /// <summary>
+        /// Initialize view of active orders.
+        /// </summary>
         private void InitializeActiveOrdersView()
         {
             var orders = OrderManager.GetActive();
@@ -66,6 +68,11 @@ namespace Orderinho
             }
         }
 
+        /// <summary>
+        /// Call initializator depend on which tab is selected.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (tabControl.SelectedTab.Name)
@@ -82,6 +89,11 @@ namespace Orderinho
             }
         }
 
+        /// <summary>
+        /// Button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ordersEditButton_Click(object sender, EventArgs e)
         {
             int id = (int)allOrdersGridView.SelectedCells[0].OwningRow.Cells[0].Value;
@@ -91,6 +103,11 @@ namespace Orderinho
             InitializeAllOrdersView();
         }
 
+        /// <summary>
+        /// Button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void activeEditButton_Click(object sender, EventArgs e)
         {
             int id = (int)activeOrdersGridView.SelectedCells[0].OwningRow.Cells[0].Value;
@@ -100,15 +117,25 @@ namespace Orderinho
             InitializeActiveOrdersView();
         }
 
+        /// <summary>
+        /// Button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void usersEditButton_Click(object sender, EventArgs e)
         {
             int id = (int)usersGridView.SelectedCells[0].OwningRow.Cells[0].Value;
             var user = UserManager.GetUserByID(id);
-            var uView= new UserView(user);
+            var uView = new UserView(user);
             uView.ShowDialog();
             InitializeUsersView();
         }
 
+        /// <summary>
+        /// Logout button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void logoutButton_Click(object sender, EventArgs e)
         {
             UserManager.LogOut();

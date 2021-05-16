@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Orderinho
@@ -17,13 +10,16 @@ namespace Orderinho
         {
             InitializeComponent();
         }
-        public OrderView(Order order):this()
+        public OrderView(Order order) : this()
         {
             SelectedOrder = order;
             InitializeStateTb();
             InitializePaymentTb();
             InitializeOrder();
         }
+        /// <summary>
+        /// Initialize textBox with order.state property.
+        /// </summary>
         private void InitializeStateTb()
         {
             stateTb.Items.Clear();
@@ -31,20 +27,29 @@ namespace Orderinho
             stateTb.Items.Add(OrderState.Shipped);
             stateTb.Items.Add(OrderState.Done);
         }
+        /// <summary>
+        /// Initialize textBox with order.payState property.
+        /// </summary>
         private void InitializePaymentTb()
         {
             paymentTb.Items.Clear();
             paymentTb.Items.Add(PaymentState.NonPaid);
             paymentTb.Items.Add(PaymentState.Paid);
         }
+        /// <summary>
+        /// Initialize order containing with order's  products.
+        /// </summary>
         private void InitializeOrder()
         {
             idTb.Text = SelectedOrder.ID.ToString();
             customerTb.Text = SelectedOrder.Customer.Email.ToString();
             InitializeContaining();
-            stateTb.SelectedIndex= stateTb.Items.IndexOf(SelectedOrder.State);
+            stateTb.SelectedIndex = stateTb.Items.IndexOf(SelectedOrder.State);
             paymentTb.SelectedIndex = paymentTb.Items.IndexOf(SelectedOrder.PayState);
         }
+        /// <summary>
+        /// Initialize order with order's values.
+        /// </summary>
         private void InitializeContaining()
         {
             var products = SelectedOrder.Products;
@@ -58,30 +63,34 @@ namespace Orderinho
             }
             priceLabel.Text = $"{sum} RUB";
         }
-
+        /// <summary>
+        /// Confirm button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void confirmButton_Click(object sender, EventArgs e)
         {
             try
             {
-                if((PaymentState)paymentTb.SelectedItem == SelectedOrder.PayState && 
+                if ((PaymentState)paymentTb.SelectedItem == SelectedOrder.PayState &&
                     (OrderState)stateTb.SelectedItem == SelectedOrder.State)
                 {
                     Close();
                 }
                 else
                 {
-                    if((PaymentState)paymentTb.SelectedItem != SelectedOrder.PayState)
+                    if ((PaymentState)paymentTb.SelectedItem != SelectedOrder.PayState)
                     {
                         SelectedOrder.PayState = (PaymentState)paymentTb.SelectedItem;
                     }
-                    if((OrderState)stateTb.SelectedItem != SelectedOrder.State)
+                    if ((OrderState)stateTb.SelectedItem != SelectedOrder.State)
                     {
                         SelectedOrder.State = (OrderState)stateTb.SelectedItem;
                     }
                     OrderManager.UpdateOrder(SelectedOrder);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 stateTb.SelectedIndex = stateTb.Items.IndexOf(SelectedOrder.State);

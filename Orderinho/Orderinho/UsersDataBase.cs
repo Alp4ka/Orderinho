@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SQLite;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace Orderinho
@@ -68,7 +64,10 @@ namespace Orderinho
             }
             return result;
         }
-
+        /// <summary>
+        /// Add new user to database.
+        /// </summary>
+        /// <param name="user"></param>
         public static void Add(User user)
         {
             using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", _dbPath)))

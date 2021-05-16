@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Threading.Tasks;
 
 namespace Orderinho
 {
@@ -29,11 +26,14 @@ namespace Orderinho
             Customer = customer;
             Products = new Dictionary<int, int>();
         }
-        public Cart(User customer, Dictionary<int, int> products):this(customer)
+        public Cart(User customer, Dictionary<int, int> products) : this(customer)
         {
             Products = new Dictionary<int, int>(products);
-            //MessageBox.Show(Utils.ProductsInline(Products));
         }
+        /// <summary>
+        /// Add a product to cart.
+        /// </summary>
+        /// <param name="product"></param>
         public void Add(Product product)
         {
             if (Products.Keys.Contains(product.ID))
@@ -45,17 +45,25 @@ namespace Orderinho
                 Products.Add(product.ID, 1);
             }
         }
+        /// <summary>
+        /// Remove a product from cart.
+        /// </summary>
+        /// <param name="product"></param>
         public void Remove(Product product)
         {
             if (Products.Keys.Contains(product.ID))
             {
                 Products[product.ID]--;
-                if(Products[product.ID] == 0)
+                if (Products[product.ID] == 0)
                 {
                     Products.Remove(product.ID);
                 }
             }
         }
+        /// <summary>
+        /// Make an order from existing cart.
+        /// </summary>
+        /// <returns></returns>
         public Order CreateOrder()
         {
             return new Order(OrderManager.GetAllOrders().Count + 1, Customer, Products);

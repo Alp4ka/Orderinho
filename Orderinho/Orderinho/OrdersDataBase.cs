@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Data.Common;
 using System.Data.SQLite;
 using System.IO;
-using System.Windows.Forms;
-using System.Threading.Tasks;
 
 namespace Orderinho
 {
@@ -38,6 +34,11 @@ namespace Orderinho
 
         }
         public static string Path { get => _dbPath; }
+        /// <summary>
+        /// Get cart of user.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static Cart GetCart(User user)
         {
             if (File.Exists(_dbPath))
@@ -52,7 +53,6 @@ namespace Orderinho
                         {
                             int id = user.ID;
                             var products = Utils.ParseProducts(record["Products"].ToString());
-                            //MessageBox.Show($"{id} | {Utils.ProductsInline(products)}");
                             return new Cart(user, products);
                         }
                     }
@@ -60,6 +60,10 @@ namespace Orderinho
             }
             return null;
         }
+        /// <summary>
+        /// Save existing cart.
+        /// </summary>
+        /// <param name="cart"></param>
         public static void SaveCart(Cart cart)
         {
             if (File.Exists(_dbPath))
@@ -73,7 +77,10 @@ namespace Orderinho
                 }
             }
         }
-
+        /// <summary>
+        /// Update existing order.
+        /// </summary>
+        /// <param name="order"></param>
         public static void UpdateOrder(Order order)
         {
             if (File.Exists(_dbPath))
@@ -87,8 +94,6 @@ namespace Orderinho
                 }
             }
         }
-
-
         /// <summary>
         /// Read database.
         /// </summary>
