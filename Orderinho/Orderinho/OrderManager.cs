@@ -28,6 +28,27 @@ namespace Orderinho
             var temp = GetAllOrders();
             return temp.Where(x => x.State != OrderState.Done).ToList();
         }
+        public static List<Order> GetByState(OrderState state, User user = null)
+        {
+            var orders = GetAllOrders();
+            return user == null ? 
+                orders.Where(x => x.State == state).ToList() : 
+                orders.Where(x => x.State == state && x.Customer.ID == user.ID).ToList();
+        }
+        public static List<Order> GetByState(PaymentState payment, User user = null)
+        {
+            var orders = GetAllOrders();
+            return user == null ? 
+                orders.Where(x => x.PayState == payment).ToList() : 
+                orders.Where(x => x.PayState == payment && x.Customer.ID == user.ID).ToList();
+        }
+        public static List<Order> GetByState(OrderState state, PaymentState payment, User user = null)
+        {
+            var orders = GetAllOrders();
+            return user == null ?
+                orders.Where(x => x.PayState == payment && x.State == state).ToList() :
+                orders.Where(x => x.PayState == payment && x.State == state && x.Customer.ID == user.ID).ToList();
+        }
         /// <summary>
         /// Add order to database.
         /// </summary>

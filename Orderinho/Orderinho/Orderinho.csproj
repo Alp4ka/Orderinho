@@ -95,6 +95,12 @@
       <DependentUpon>CartView.cs</DependentUpon>
     </Compile>
     <Compile Include="OrdersDataBase.cs" />
+    <Compile Include="OrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderView.Designer.cs">
+      <DependentUpon>OrderView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductManager.cs" />
     <Compile Include="ProductsDataBase.cs" />
     <Compile Include="SignUpForm.cs">

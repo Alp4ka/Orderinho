@@ -15,6 +15,49 @@ namespace Orderinho
         public AdminForm()
         {
             InitializeComponent();
+            InitializeAllOrdersView();
+        }
+        private void InitializeUsersView()
+        {
+            var orders = OrderManager.GetAllOrders();
+            foreach(Order order in orders)
+            {
+                var id = order.ID;
+                var customer = order.Customer.Email;
+            }
+        }
+        private void InitializeAllOrdersView()
+        {
+            var orders = OrderManager.GetAllOrders();
+            foreach (Order order in orders)
+            {
+                var id = order.ID;
+                var customer = order.Customer.Email;
+            }
+        }
+        private void InitializeActiveOrdersView()
+        {
+            var orders = OrderManager.GetAllOrders();
+            foreach (Order order in orders)
+            {
+                var id = order.ID;
+                var customer = order.Customer.Email;
+            }
+        }
+
+        private void tabControl_TabIndexChanged(object sender, EventArgs e)
+        {
+            switch(tabControl.SelectedTab.Name){
+                case "allOrdersTab":
+                    InitializeAllOrdersView();
+                    return;
+                case "activeOrdersTab":
+                    InitializeActiveOrdersView();
+                    return;
+                case "usersTab":
+                    InitializeUsersView();
+                    return;
+            }
         }
     }
 }
